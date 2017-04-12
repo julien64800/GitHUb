@@ -22,7 +22,7 @@
 #pragma config BORV = 3         // Brown-out Voltage bits (Minimum setting)
 
 // CONFIG2H
-#pragma config WDT = ON         // Watchdog Timer (WDT enabled)
+#pragma config WDT = OFF         // Watchdog Timer (WDT enabled)
 #pragma config WDTPS = 32768    // Watchdog Timer Postscale Select bits (1:32768)
 
 // CONFIG3L
@@ -38,7 +38,7 @@
 #pragma config MCLRE = ON       // MCLR Pin Enable bit (MCLR pin enabled; RG5 input pin disabled)
 
 // CONFIG4L
-#pragma config STVREN = ON      // Stack Full/Underflow Reset Enable bit (Stack full/underflow will cause Reset)
+#pragma config STVREN = OFF      // Stack Full/Underflow Reset Enable bit (Stack full/underflow will cause Reset)
 #pragma config LVP = ON         // Single-Supply ICSP Enable bit (Single-Supply ICSP enabled)
 #pragma config BBSIZ = BB2K     // Boot Block Size Select bits (1K word (2 Kbytes) Boot Block size)
 #pragma config XINST = OFF      // Extended Instruction Set Enable bit (Instruction set extension and Indexed Addressing mode disabled (Legacy mode))
@@ -105,16 +105,7 @@
 
 #define _XTAL_FREQ 10000000 
 #define Play_Back_ON PORTBbits.RB0
-//#define LED1 PORTDbits.RD0
 
-//Read Voltage drop accros shunt resistor
-//Store Value in char
-//Convert Voltage to Current 
-
-//Capture sample every 30minutes
-//Sample must be store in FLASH in order  with the following format "Sample Number, "Time (Hour,Minute),"Value (mA)"
-//Need 24h of sample
-//When pressing RA5 playing back data across UART interface (display data on MAC)
 
 
 uint8_t Voltage_Drop =0,Current=0,Resistor=0;
@@ -138,9 +129,7 @@ void Analog_Capture_ON(void); //Subroutine in charge of reading analog input
 void Analog_Capture_OFF(void);// Turn OFF analog input before calling Play_Back
 void Initialize_UART(void);//
 void Read_UART_Input (); // Read keyboard
-void Send_Command (char );
-void Send_Sampling ();
-void Send_Unit ();
+void Send_to_UART ();
 void EEPROM_Write(uint8_t,uint8_t[]);
 void EEPROM_Read(uint8_t); 
 void Half_Hour_Tick ();
@@ -150,34 +139,35 @@ void Average_Function ();//Calculate Average off 50 last points.
 
 void main( void )
 {
+         RCONbits.RI=0; 
         TRISD=0x00;
         TRISA=0xFF;
         Initialize_UART(); 
-
-        sprintf(b,"Press S to Start Communication:");
-        
-        Send_Sampling();
-  
-
-
-        while(1){
-        Initialize_UART();
+        sprintf(b,"Acquisition in progress please wait: \n");
+        Send_to_UART();
         Initialize_Analog();
-        Read_UART_Input();
-        //EEPROM_test();
-        Analog_Capture_ON (); 
-        //PORTD=ADRESH;
-        
-        
+        Analog_Capture_ON ();
         
         for (int x=0,y=0;x<=50,y<=50;x++,y++)
         { 
         EEPROM_Write(x,Sample[y]); 
         }
-       
-        
+
+
+while(1)
+{
+        sprintf(b,"Acquisition completed press S to read or R to reset: \n");
+        Send_to_UART();       
+        Read_UART_Input();
+        if(Keyboard=='R')
+        {
+         RCONbits.RI=1;   
+        }
+
         if(Keyboard=='S') 
         {
+        sprintf(b,"Please wait...... \n");
+        Send_to_UART();    
         Analog_Capture_OFF();
        
         
@@ -187,37 +177,33 @@ void main( void )
         
         int i =0;
         i++;
-        sprintf(b,"Sampling number %d: %d mA :",x,result_EEPROM);
+        sprintf(b,"Sampling number %d: %d mA :\n",x,result_EEPROM);
         
-        Send_Sampling();
+        Send_to_UART();
         }
         
-        if(Keyboard=='A'){
+        
             
         int i =0;
         i++;
-        sprintf(b,"Average of last 50 Samples: %d mA",Average);
+        sprintf(b,"Average of last 50 Samples: %d mA \n",Average);
         
-        Send_Sampling();   
-            
-            
-            
+        Send_to_UART();   
+ 
+        
+
         }
+//        else 
+//        {
+//        TXSTA1bits.TXEN=0;
+//        Analog_Capture_ON();
+//        }
         
-        
-        
-        
-        }
-        else {
-             TXSTA1bits.TXEN=0;
-             Analog_Capture_ON();
-        }
-        //Send_Unit();
-        }
+}
 
                
 
-    }
+}
     
    
 
@@ -241,7 +227,8 @@ void Initialize_UART(){
  
 }
 
-void Read_UART_Input (){
+void Read_UART_Input ()
+{
     
    RCSTA1bits.CREN=1; //Enable reception
    while(PIR1bits.RC1IF==0);
@@ -254,27 +241,28 @@ void Read_UART_Input (){
 }
 
 
-void Send_Command (char Command){
-    
-    TXREG1=Command;
-    __delay_us(50); //Can't test TXIF immediately after write see AN774 page
-    while(PIR1bits.TX1IF==0);
-    
-}
 
 
-void Send_Sampling (){
+
+void Send_to_UART ()
+{
     
     int i=0;
-    while (b[i]!='\0'){
-    Send_Command(b[i++]);
+
+while (b[i]!='\0')
+{
+ 
+    TXREG1=(b[i++]);
+    __delay_us(50); //Can't test TXIF immediately after write see AN774 page
+    while(PIR1bits.TX1IF==0);
         
-    }
+}
     
 }
 
 
-void Initialize_Analog(void){
+void Initialize_Analog(void)
+{
     
     //RA0 pot on dev board 10k 
     TRISA=0xff; // port A input
@@ -292,30 +280,26 @@ void Initialize_Analog(void){
 }
 
 
-void Analog_Capture_ON (){
+void Analog_Capture_ON ()
+{
     
-    for(int x=0;x<=50;x++){  
+    for(int x=0;x<=50;x++)
+    {  
     ADCON0bits.GO_DONE=1; // starts conversion
-    while(ADCON0bits.GO_DONE==1); // wait, it's converting
-		
-    
-   // PORTD=ADRESH; 
-   // __delay_ms(1000);
-    
-   // while(Half_Hour_Tick);
-        
+    while(ADCON0bits.GO_DONE==1); // wait, for convertion to end
     Sample[x]=ADRESH;
     Initialize_Analog;
     __delay_ms(500);
+    if(x==50)
+    {
+        x=51;
     }
-   
-    
-    
-  //  EEPROM_W=ADRESH;
+    }  
     
 }
 
-void Analog_Capture_OFF (){
+void Analog_Capture_OFF ()
+{
     ADCON0bits.ADON=0; //Analog module OFF
     
     
@@ -323,21 +307,15 @@ void Analog_Capture_OFF (){
 }
 
 
-void Send_Unit (){
-     
-    for (int i=0;i<=3;i++){
-    Send_Command(text[i]); 
-        
-    }
-   
-}
 
 
-void EEPROM_Write (uint8_t address,uint8_t value []){
+
+void EEPROM_Write (uint8_t address,uint8_t value [])
+{
 
     
    
-    __delay_ms(50);
+    
     EECON1bits.WREN=1;
     EEADR=address ;
     EEDATA=value;
@@ -358,12 +336,13 @@ void EEPROM_Write (uint8_t address,uint8_t value []){
 }
 
 
-void EEPROM_Read(uint8_t address){
+void EEPROM_Read(uint8_t address)
+{
     
     
    
     //EEADRH=EEPROM_address & 0x300;
-     __delay_ms(50);
+    
     EEADR=address;
     EECON1bits.EEPGD=0;
     EECON1bits.CFGS=0;
@@ -374,7 +353,8 @@ void EEPROM_Read(uint8_t address){
    
 }
 
-void Half_Hour_Tick (){
+void Half_Hour_Tick ()
+{
     
     
     for(int x=0;x<=5;x++)
@@ -389,10 +369,12 @@ void Half_Hour_Tick (){
 
 
 
-void EEPROM_test(){
+void EEPROM_test()
+{
     
     
-    for (int x=0;x<50;x++){
+    for (int x=0;x<50;x++)
+    {
         
         Sample[x]=x;
         
@@ -403,9 +385,11 @@ void EEPROM_test(){
 }
 
 
-void Average_Function (){
+void Average_Function ()
+{
     
-    for(int x=0;x<=50;x++){
+    for(int x=1;x<=50;x++)
+    {
     Average +=Sample_for_Average[x];
     
     }

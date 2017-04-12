@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=/Applications/microchip/xc8/v1.41/dat/en_msgs.txt -cs \
   -h+dist/default/production/Current_Monitor.X.production.sym \
   --cmf=dist/default/production/Current_Monitor.X.production.cmf -z \
-  -Q18F8722 -o/tmp/xcVpPBd2q \
+  -Q18F8722 -o/tmp/xcxUWtH5A \
   -Mdist/default/production/Current_Monitor.X.production.map -E1 -ver=XC8 \
   -ASTACK=0164h-0f5fh -pstack=STACK -ACODE=00h-01FFFFh -ACONST=00h-01FFFFh \
   -ASMALLCONST=01000h-010FFhx496 \
@@ -26,7 +26,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  /tmp/xcoDoRqIw.obj \
+  /tmp/xcEOBzK5d.obj \
   dist/default/production/Current_Monitor.X.production.obj 
 
 Object code version is 3.11
@@ -39,62 +39,60 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-/tmp/xcoDoRqIw.obj
+/tmp/xcEOBzK5d.obj
                 init                                  0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
 dist/default/production/Current_Monitor.X.production.obj
-                smallconst                         1000     1000       6A      800       0
-                text14                             15F4     15F4        4      835       0
-                text13                             1366     1366       5C      835       0
-                text12                             12E2     12E2       84      835       0
-                text11                             13C2     13C2       56      835       0
-                text10                             146A     146A       4A      835       0
-                text9                              1538     1538       36      835       0
-                text8                              15A2     15A2       1E      835       0
-                text7                              15D4     15D4       14      835       0
-                text6                              15E8     15E8        C      835       0
-                text5                              15C0     15C0       14      835       0
-                text4                              156E     156E       34      835       0
-                text3                              1418     1418       52      835       0
-                text2                              14F6     14F6       42      835       0
-                text1                              106A     106A      15C      835       0
-                text0                              11C6     11C6      11C      835       0
+                smallconst                         1000     1000       C0      800       0
+                text13                             1658     1658        4      860       0
+                text12                             13E2     13E2       6E      860       0
+                text11                             135E     135E       84      860       0
+                text10                             1450     1450       56      860       0
+                text9                              15BA     15BA       3A      860       0
+                text8                              15F4     15F4       26      860       0
+                text7                              161A     161A       1E      860       0
+                text6                              1638     1638       14      860       0
+                text5                              164C     164C        C      860       0
+                text4                              157C     157C       3E      860       0
+                text3                              14A6     14A6       52      860       0
+                text2                              153A     153A       42      860       0
+                text1                              10C0     10C0      15C      860       0
+                text0                              121C     121C      142      860       0
                 cstackCOMRAM                          1        1       26        1       1
                 bssBANK1                            100      100       64      100       1
                 bssBANK0                             60       60       96       60       1
                 dataCOMRAM                           38       38        2        1       1
                 bssCOMRAM                            27       27       11        1       1
-                cinit                              14B4     14B4       42      835       0
-                idataCOMRAM                        15F8     15F8        2      835       0
+                cinit                              14F8     14F8       42      860       0
+                idataCOMRAM                        165C     165C        2      860       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
 
         CLASS   CODE           
                 init                                  0        0        4         0
-                text14                             15F4     15F4        4         0
-                text13                             1366     1366       5C         0
-                text12                             12E2     12E2       84         0
-                text11                             13C2     13C2       56         0
-                text10                             146A     146A       4A         0
-                text9                              1538     1538       36         0
-                text8                              15A2     15A2       1E         0
-                text7                              15D4     15D4       14         0
-                text6                              15E8     15E8        C         0
-                text5                              15C0     15C0       14         0
-                text4                              156E     156E       34         0
-                text3                              1418     1418       52         0
-                text2                              14F6     14F6       42         0
-                text1                              106A     106A      15C         0
-                text0                              11C6     11C6      11C         0
-                cinit                              14B4     14B4       42         0
-                idataCOMRAM                        15F8     15F8        2         0
+                text13                             1658     1658        4         0
+                text12                             13E2     13E2       6E         0
+                text11                             135E     135E       84         0
+                text10                             1450     1450       56         0
+                text9                              15BA     15BA       3A         0
+                text8                              15F4     15F4       26         0
+                text7                              161A     161A       1E         0
+                text6                              1638     1638       14         0
+                text5                              164C     164C        C         0
+                text4                              157C     157C       3E         0
+                text3                              14A6     14A6       52         0
+                text2                              153A     153A       42         0
+                text1                              10C0     10C0      15C         0
+                text0                              121C     121C      142         0
+                cinit                              14F8     14F8       42         0
+                idataCOMRAM                        165C     165C        2         0
 
         CLASS   CONST          
 
         CLASS   SMALLCONST     
-                smallconst                         1000     1000       6A         0
+                smallconst                         1000     1000       C0         0
 
         CLASS   MEDIUMCONST    
 
@@ -163,8 +161,8 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 cstackCOMRAM                   000001  000039  00003A         1       1  COMRAM  
                 bssBANK0                       000060  000096  0000F6        60       1  BANK0   
                 bssBANK1                       000100  000064  000164       100       1  BANK1   
-                smallconst                     001000  00006A  00106A       800       0  SMALLCON
-                text1                          00106A  000590  0015FA       835       0  CODE    
+                smallconst                     001000  0000C0  0010C0       800       0  SMALLCON
+                text1                          0010C0  00059E  00165E       860       0  CODE    
                 idloc                          200000  000008  200008    200000       0  IDLOC   
                 config                         300000  00000E  30000E    300000       0  CONFIG  
 
@@ -192,17 +190,17 @@ UNUSED ADDRESS RANGES
                          0000F6-0000FF                A
                          000164-000F5F              DFC
         CODE             000004-000FFF              FFC
-                         0015FA-01FFFF            1EA06
+                         00165E-01FFFF            1E9A2
         COMRAM           00003A-00005F               26
         CONST            000004-000FFF              FFC
-                         0015FA-01FFFF            1EA06
+                         00165E-01FFFF            1E9A2
         EEDATA           F00000-F003FF              400
-        MEDIUMCONST      0015FA-00FFFF             EA06
+        MEDIUMCONST      00165E-00FFFF             E9A2
                          011000-01FFFF             F000
         RAM              0000F6-0000FF                A
                          000164-000F5F              100
         SFR              000F60-000FFF               A0
-        SMALLCONST       0015FA-01FFFF              100
+        SMALLCONST       00165E-01FFFF              100
         STACK            000164-000F5F              DFC
 
                                   Symbol Table
@@ -214,48 +212,47 @@ UNUSED ADDRESS RANGES
 Analog_Capture_ON@x          cstackCOMRAM 000003
 Average_Function@x           cstackCOMRAM 000009
 EEPROM_Read@address          cstackCOMRAM 00000D
-EEPROM_Write@address         cstackCOMRAM 000004
+EEPROM_Write@address         cstackCOMRAM 000003
 EEPROM_Write@value           cstackCOMRAM 000001
-Send_Command@Command         cstackCOMRAM 000001
-Send_Sampling@i              cstackCOMRAM 000002
+Send_to_UART@i               cstackCOMRAM 000001
 _ADCON0                      (abs)        000FC2
 _ADCON0bits                  (abs)        000FC2
 _ADCON1                      (abs)        000FC1
 _ADCON2                      (abs)        000FC0
 _ADRESH                      (abs)        000FC4
-_Analog_Capture_OFF          text14       0015F4
-_Analog_Capture_ON           text13       001366
+_Analog_Capture_OFF          text13       001658
+_Analog_Capture_ON           text12       0013E2
 _Average                     bssCOMRAM    000027
-_Average_Function            text11       0013C2
+_Average_Function            text10       001450
 _BAUDCON1bits                (abs)        000F7E
 _Current                     bssCOMRAM    000033
 _EEADR                       (abs)        000FA9
 _EECON1bits                  (abs)        000FA6
 _EECON2                      (abs)        000FA7
 _EEDATA                      (abs)        000FA8
-_EEPROM_Read                 text10       00146A
+_EEPROM_Read                 text9        0015BA
 _EEPROM_W                    bssCOMRAM    000031
-_EEPROM_Write                text9        001538
+_EEPROM_Write                text8        0015F4
 _EEPROM_address              bssCOMRAM    00002F
 _EEPROM_read                 bssBANK0     0000C4
 _INTCONbits                  (abs)        000FF2
-_Initialize_Analog           text8        0015A2
-_Initialize_UART             text7        0015D4
+_Initialize_Analog           text7        00161A
+_Initialize_UART             text6        001638
 _Keyboard                    bssCOMRAM    00002D
 _MEMCONbits                  (abs)        000F9C
 _PIR1bits                    (abs)        000F9E
 _PORTA                       (abs)        000F80
 _PORTD                       (abs)        000F83
+_RCONbits                    (abs)        000FD0
 _RCREG1                      (abs)        000FAE
 _RCSTA1bits                  (abs)        000FAB
-_Read_UART_Input             text6        0015E8
+_Read_UART_Input             text5        00164C
 _Resistor                    bssCOMRAM    000032
 _SPBRG1                      (abs)        000FAF
 _Sample                      bssBANK0     000060
 _Sample_Number               bssCOMRAM    000030
 _Sample_for_Average          bssBANK1     000100
-_Send_Command                text5        0015C0
-_Send_Sampling               text4        00156E
+_Send_to_UART                text4        00157C
 _TRISA                       (abs)        000F92
 _TRISCbits                   (abs)        000F94
 _TRISD                       (abs)        000F95
@@ -296,9 +293,9 @@ __CFG_MCLRE$ON               (abs)        000000
 __CFG_MODE$MC                (abs)        000000
 __CFG_OSC$HS                 (abs)        000000
 __CFG_PWRT$OFF               (abs)        000000
-__CFG_STVREN$ON              (abs)        000000
+__CFG_STVREN$OFF             (abs)        000000
 __CFG_WAIT$OFF               (abs)        000000
-__CFG_WDT$ON                 (abs)        000000
+__CFG_WDT$OFF                (abs)        000000
 __CFG_WDTPS$32768            (abs)        000000
 __CFG_WRT0$OFF               (abs)        000000
 __CFG_WRT1$OFF               (abs)        000000
@@ -375,7 +372,7 @@ __Hrdata                     rdata        000000
 __Hreset_vec                 reset_vec    000000
 __Hrparam                    rparam       000000
 __Hsfr                       sfr          000000
-__Hsmallconst                smallconst   00106A
+__Hsmallconst                smallconst   0010C0
 __Hspace_0                   (abs)        30000E
 __Hspace_1                   (abs)        000164
 __Hspace_2                   (abs)        000000
@@ -389,7 +386,6 @@ __Htext10                    text10       000000
 __Htext11                    text11       000000
 __Htext12                    text12       000000
 __Htext13                    text13       000000
-__Htext14                    text14       000000
 __Htext2                     text2        000000
 __Htext3                     text3        000000
 __Htext4                     text4        000000
@@ -475,7 +471,6 @@ __Ltext10                    text10       000000
 __Ltext11                    text11       000000
 __Ltext12                    text12       000000
 __Ltext13                    text13       000000
-__Ltext14                    text14       000000
 __Ltext2                     text2        000000
 __Ltext3                     text3        000000
 __Ltext4                     text4        000000
@@ -487,7 +482,7 @@ __Ltext9                     text9        000000
 __S0                         (abs)        30000E
 __S1                         (abs)        000164
 __S2                         (abs)        000000
-___awdiv                     text12       0012E2
+___awdiv                     text11       00135E
 ___awdiv@counter             cstackCOMRAM 000005
 ___awdiv@dividend            cstackCOMRAM 000001
 ___awdiv@divisor             cstackCOMRAM 000003
@@ -496,12 +491,12 @@ ___awdiv@sign                cstackCOMRAM 000006
 ___extmem_base               (abs)        020000
 ___inthi_sp                  stack        000000
 ___intlo_sp                  stack        000000
-___lwdiv                     text3        001418
+___lwdiv                     text3        0014A6
 ___lwdiv@counter             cstackCOMRAM 000007
 ___lwdiv@dividend            cstackCOMRAM 000001
 ___lwdiv@divisor             cstackCOMRAM 000003
 ___lwdiv@quotient            cstackCOMRAM 000005
-___lwmod                     text2        0014F6
+___lwmod                     text2        00153A
 ___lwmod@counter             cstackCOMRAM 00000C
 ___lwmod@dividend            cstackCOMRAM 000008
 ___lwmod@divisor             cstackCOMRAM 00000A
@@ -510,48 +505,46 @@ ___rparam_used               (abs)        000001
 ___sp                        stack        000000
 __accesstop                  (abs)        000060
 __activetblptr               (abs)        000003
-__end_of_Analog_Capture_OFF  text14       0015F8
-__end_of_Analog_Capture_ON   text13       0013C2
-__end_of_Average_Function    text11       001418
-__end_of_EEPROM_Read         text10       0014B4
-__end_of_EEPROM_Write        text9        00156E
-__end_of_Initialize_Analog   text8        0015C0
-__end_of_Initialize_UART     text7        0015E8
-__end_of_Read_UART_Input     text6        0015F4
-__end_of_Send_Command        text5        0015D4
-__end_of_Send_Sampling       text4        0015A2
-__end_of___awdiv             text12       001366
-__end_of___lwdiv             text3        00146A
-__end_of___lwmod             text2        001538
-__end_of__initialization     cinit        0014F0
+__end_of_Analog_Capture_OFF  text13       00165C
+__end_of_Analog_Capture_ON   text12       001450
+__end_of_Average_Function    text10       0014A6
+__end_of_EEPROM_Read         text9        0015F4
+__end_of_EEPROM_Write        text8        00161A
+__end_of_Initialize_Analog   text7        001638
+__end_of_Initialize_UART     text6        00164C
+__end_of_Read_UART_Input     text5        001658
+__end_of_Send_to_UART        text4        0015BA
+__end_of___awdiv             text11       0013E2
+__end_of___lwdiv             text3        0014F8
+__end_of___lwmod             text2        00157C
+__end_of__initialization     cinit        001534
 __end_of_dpowers             smallconst   00100B
-__end_of_main                text0        0012E2
-__end_of_sprintf             text1        0011C6
-__initialization             cinit        0014B4
+__end_of_main                text0        00135E
+__end_of_sprintf             text1        00121C
+__initialization             cinit        0014F8
 __mediumconst                mediumconst  000000
 __pbssBANK0                  bssBANK0     000060
 __pbssBANK1                  bssBANK1     000100
 __pbssCOMRAM                 bssCOMRAM    000027
-__pcinit                     cinit        0014B4
+__pcinit                     cinit        0014F8
 __pcstackCOMRAM              cstackCOMRAM 000001
 __pdataCOMRAM                dataCOMRAM   000038
-__pidataCOMRAM               idataCOMRAM  0015F8
+__pidataCOMRAM               idataCOMRAM  00165C
 __psmallconst                smallconst   001000
-__ptext0                     text0        0011C6
-__ptext1                     text1        00106A
-__ptext10                    text10       00146A
-__ptext11                    text11       0013C2
-__ptext12                    text12       0012E2
-__ptext13                    text13       001366
-__ptext14                    text14       0015F4
-__ptext2                     text2        0014F6
-__ptext3                     text3        001418
-__ptext4                     text4        00156E
-__ptext5                     text5        0015C0
-__ptext6                     text6        0015E8
-__ptext7                     text7        0015D4
-__ptext8                     text8        0015A2
-__ptext9                     text9        001538
+__ptext0                     text0        00121C
+__ptext1                     text1        0010C0
+__ptext10                    text10       001450
+__ptext11                    text11       00135E
+__ptext12                    text12       0013E2
+__ptext13                    text13       001658
+__ptext2                     text2        00153A
+__ptext3                     text3        0014A6
+__ptext4                     text4        00157C
+__ptext5                     text5        00164C
+__ptext6                     text6        001638
+__ptext7                     text7        00161A
+__ptext8                     text8        0015F4
+__ptext9                     text9        0015BA
 __ramtop                     ramtop       001000
 __size_of_Analog_Capture_OFF (abs)        000000
 __size_of_Analog_Capture_ON  (abs)        000000
@@ -561,8 +554,7 @@ __size_of_EEPROM_Write       (abs)        000000
 __size_of_Initialize_Analog  (abs)        000000
 __size_of_Initialize_UART    (abs)        000000
 __size_of_Read_UART_Input    (abs)        000000
-__size_of_Send_Command       (abs)        000000
-__size_of_Send_Sampling      (abs)        000000
+__size_of_Send_to_UART       (abs)        000000
 __size_of___awdiv            (abs)        000000
 __size_of___lwdiv            (abs)        000000
 __size_of___lwmod            (abs)        000000
@@ -572,20 +564,20 @@ __smallconst                 smallconst   001000
 _a                           bssCOMRAM    00002B
 _b                           bssCOMRAM    000035
 _dpowers                     smallconst   001001
-_main                        text0        0011C6
+_main                        text0        00121C
 _result_EEPROM               bssCOMRAM    00002E
-_sprintf                     text1        00106A
+_sprintf                     text1        0010C0
 _text                        dataCOMRAM   000038
 _x                           bssCOMRAM    000029
-end_of_initialization        cinit        0014F0
+end_of_initialization        cinit        001534
 intlevel0                    text         000000
 intlevel1                    text         000000
 intlevel2                    text         000000
 intlevel3                    text         000000
 main@i                       cstackCOMRAM 00001D
-main@i_574                   cstackCOMRAM 00001F
+main@i_648                   cstackCOMRAM 00001F
 main@x                       cstackCOMRAM 000021
-main@x_571                   cstackCOMRAM 000025
+main@x_645                   cstackCOMRAM 000025
 main@y                       cstackCOMRAM 000023
 sprintf@ap                   cstackCOMRAM 000016
 sprintf@c                    cstackCOMRAM 00001C
@@ -597,20 +589,20 @@ sprintf@val                  cstackCOMRAM 00001A
 stackhi                      (abs)        000F5F
 stacklo                      (abs)        000164
 start                        init         000000
-start_initialization         cinit        0014B4
+start_initialization         cinit        0014F8
 
 
 FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 151 in file "Current_Monitor.c"
+		line 140 in file "Current_Monitor.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
   i               2   28[COMRAM] int 
-  i               2   30[COMRAM] int 
   x               2   36[COMRAM] int 
+  i               2   30[COMRAM] int 
   y               2   34[COMRAM] int 
   x               2   32[COMRAM] int 
  Return value:  Size  Location     Type
@@ -636,7 +628,7 @@ Total ram usage:       10 bytes
 		_Initialize_Analog
 		_Initialize_UART
 		_Read_UART_Input
-		_Send_Sampling
+		_Send_to_UART
 		_sprintf
  This function is called by:
 		Startup code after reset
@@ -650,7 +642,8 @@ Total ram usage:       10 bytes
   sp              2   12[COMRAM] PTR unsigned char 
 		 -> b(3), 
   f               2   14[COMRAM] PTR const unsigned char 
-		 -> STR_3(34), STR_2(28), STR_1(32), 
+		 -> STR_5(36), STR_4(29), STR_3(20), STR_2(55), 
+		 -> STR_1(39), 
  Auto vars:     Size  Location     Type
   tmpval          4    0        struct .
   cp              3    0        PTR const unsigned char 
@@ -746,17 +739,17 @@ Total ram usage:        7 bytes
  This function uses a non-reentrant model
 
 
- *************** function _Send_Sampling *****************
+ *************** function _Send_to_UART *****************
  Defined at:
-		line 266 in file "Current_Monitor.c"
+		line 247 in file "Current_Monitor.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
-  i               2    1[COMRAM] int 
+  i               2    0[COMRAM] int 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
-		wreg, fsr2l, fsr2h, status,2, status,0, cstack
+		wreg, fsr2l, fsr2h, status,2, status,0
  Tracked objects:
 		On entry : 
 		On exit  : 
@@ -768,47 +761,16 @@ Total ram usage:        7 bytes
       Totals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
 Total ram usage:        2 bytes
  Hardware stack levels used:    1
- Hardware stack levels required when called:    1
  This function calls:
-		_Send_Command
+		Nothing
  This function is called by:
 		_main
  This function uses a non-reentrant model
 
 
- *************** function _Send_Command *****************
- Defined at:
-		line 257 in file "Current_Monitor.c"
- Parameters:    Size  Location     Type
-  Command         1    wreg     unsigned char 
- Auto vars:     Size  Location     Type
-  Command         1    0[COMRAM] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        1 bytes
- Hardware stack levels used:    1
- This function calls:
-		Nothing
- This function is called by:
-		_Send_Sampling
-		_Send_Unit
- This function uses a non-reentrant model
-
-
  *************** function _Read_UART_Input *****************
  Defined at:
-		line 244 in file "Current_Monitor.c"
+		line 230 in file "Current_Monitor.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -837,7 +799,7 @@ Total ram usage:        0 bytes
 
  *************** function _Initialize_UART *****************
  Defined at:
-		line 225 in file "Current_Monitor.c"
+		line 211 in file "Current_Monitor.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -866,7 +828,7 @@ Total ram usage:        0 bytes
 
  *************** function _Initialize_Analog *****************
  Defined at:
-		line 277 in file "Current_Monitor.c"
+		line 264 in file "Current_Monitor.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -895,13 +857,13 @@ Total ram usage:        0 bytes
 
  *************** function _EEPROM_Write *****************
  Defined at:
-		line 336 in file "Current_Monitor.c"
+		line 313 in file "Current_Monitor.c"
  Parameters:    Size  Location     Type
   address         1    wreg     unsigned char 
   value           2    0[COMRAM] PTR unsigned char 
 		 -> RAM(3935), 
  Auto vars:     Size  Location     Type
-  address         1    3[COMRAM] unsigned char 
+  address         1    2[COMRAM] unsigned char 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
@@ -913,9 +875,9 @@ Total ram usage:        0 bytes
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
       Params:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Locals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        4 bytes
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        3 bytes
  Hardware stack levels used:    1
  This function calls:
 		Nothing
@@ -926,7 +888,7 @@ Total ram usage:        4 bytes
 
  *************** function _EEPROM_Read *****************
  Defined at:
-		line 361 in file "Current_Monitor.c"
+		line 339 in file "Current_Monitor.c"
  Parameters:    Size  Location     Type
   address         1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -956,7 +918,7 @@ Total ram usage:        3 bytes
 
  *************** function _Average_Function *****************
  Defined at:
-		line 406 in file "Current_Monitor.c"
+		line 388 in file "Current_Monitor.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1018,7 +980,7 @@ Total ram usage:        8 bytes
 
  *************** function _Analog_Capture_ON *****************
  Defined at:
-		line 295 in file "Current_Monitor.c"
+		line 283 in file "Current_Monitor.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1047,7 +1009,7 @@ Total ram usage:        4 bytes
 
  *************** function _Analog_Capture_OFF *****************
  Defined at:
-		line 318 in file "Current_Monitor.c"
+		line 301 in file "Current_Monitor.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1079,43 +1041,42 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 /Applications/microchip/xc8/v1.41/sources/common/doprnt.c
-		_sprintf       		CODE           	106A	0000	349
+		_sprintf       		CODE           	10C0	0000	349
 
 /Applications/microchip/xc8/v1.41/sources/common/doprnt.c estimated size: 349
 
 Current_Monitor.c
-		_Average_Function		CODE           	13C2	0000	87
-		_Send_Sampling 		CODE           	156E	0000	53
-		_EEPROM_Read   		CODE           	146A	0000	75
-		_Analog_Capture_ON		CODE           	1366	0000	93
-		_Send_Command  		CODE           	15C0	0000	21
-		_EEPROM_Write  		CODE           	1538	0000	55
-		_main          		CODE           	11C6	0000	285
-		_Initialize_Analog		CODE           	15A2	0000	31
-		_Analog_Capture_OFF		CODE           	15F4	0000	5
-		_Read_UART_Input		CODE           	15E8	0000	13
-		_Initialize_UART		CODE           	15D4	0000	21
+		_Send_to_UART  		CODE           	157C	0000	63
+		_Average_Function		CODE           	1450	0000	87
+		_EEPROM_Read   		CODE           	15BA	0000	59
+		_Analog_Capture_ON		CODE           	13E2	0000	111
+		_EEPROM_Write  		CODE           	15F4	0000	39
+		_main          		CODE           	121C	0000	323
+		_Initialize_Analog		CODE           	161A	0000	31
+		_Analog_Capture_OFF		CODE           	1658	0000	5
+		_Read_UART_Input		CODE           	164C	0000	13
+		_Initialize_UART		CODE           	1638	0000	21
 
-Current_Monitor.c estimated size: 739
+Current_Monitor.c estimated size: 752
 
 /Applications/microchip/xc8/v1.41/sources/common/lwmod.c
-		___lwmod       		CODE           	14F6	0000	67
+		___lwmod       		CODE           	153A	0000	67
 
 /Applications/microchip/xc8/v1.41/sources/common/lwmod.c estimated size: 67
 
 shared
 		_dpowers       		SMALLCONST     	1001	0000	11
-		__initialization		CODE           	14B4	0000	61
+		__initialization		CODE           	14F8	0000	61
 
 shared estimated size: 72
 
 /Applications/microchip/xc8/v1.41/sources/common/lwdiv.c
-		___lwdiv       		CODE           	1418	0000	83
+		___lwdiv       		CODE           	14A6	0000	83
 
 /Applications/microchip/xc8/v1.41/sources/common/lwdiv.c estimated size: 83
 
 /Applications/microchip/xc8/v1.41/sources/common/awdiv.c
-		___awdiv       		CODE           	12E2	0000	133
+		___awdiv       		CODE           	135E	0000	133
 
 /Applications/microchip/xc8/v1.41/sources/common/awdiv.c estimated size: 133
 
