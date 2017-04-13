@@ -1,81 +1,6 @@
 
 # 1 "Current_Monitor.c"
 
-
-# 15
-#pragma config OSC = HS
-#pragma config FCMEN = OFF
-#pragma config IESO = OFF
-
-
-#pragma config PWRT = OFF
-#pragma config BOREN = SBORDIS
-#pragma config BORV = 3
-
-
-#pragma config WDT = OFF
-#pragma config WDTPS = 32768
-
-
-#pragma config MODE = MC
-#pragma config ADDRBW = ADDR20BIT
-#pragma config DATABW = DATA16BIT
-#pragma config WAIT = OFF
-
-
-#pragma config CCP2MX = PORTC
-#pragma config ECCPMX = PORTE
-#pragma config LPT1OSC = OFF
-#pragma config MCLRE = ON
-
-
-#pragma config STVREN = OFF
-#pragma config LVP = ON
-#pragma config BBSIZ = BB2K
-#pragma config XINST = OFF
-
-
-#pragma config CP0 = OFF
-#pragma config CP1 = OFF
-#pragma config CP2 = OFF
-#pragma config CP3 = OFF
-#pragma config CP4 = OFF
-#pragma config CP5 = OFF
-#pragma config CP6 = OFF
-#pragma config CP7 = OFF
-
-
-#pragma config CPB = OFF
-#pragma config CPD = OFF
-
-
-#pragma config WRT0 = OFF
-#pragma config WRT1 = OFF
-#pragma config WRT2 = OFF
-#pragma config WRT3 = OFF
-#pragma config WRT4 = OFF
-#pragma config WRT5 = OFF
-#pragma config WRT6 = OFF
-#pragma config WRT7 = OFF
-
-
-#pragma config WRTC = OFF
-#pragma config WRTB = OFF
-#pragma config WRTD = OFF
-
-
-#pragma config EBTR0 = OFF
-#pragma config EBTR1 = OFF
-#pragma config EBTR2 = OFF
-#pragma config EBTR3 = OFF
-#pragma config EBTR4 = OFF
-#pragma config EBTR5 = OFF
-#pragma config EBTR6 = OFF
-#pragma config EBTR7 = OFF
-
-
-#pragma config EBTRB = OFF
-
 # 26 "/Applications/microchip/xc8/v1.41/include/htc.h"
 extern const char __xc8_OPTIM_SPEED;
 
@@ -6931,22 +6856,93 @@ extern struct tm * localtime(const time_t *) ;
 extern size_t strftime(char *, size_t, const char *, const struct tm *) ;
 extern time_t mktime(struct tm *);
 
-# 111 "Current_Monitor.c"
+
+# 49 "Config.h"
+#pragma config OSC = HS
+#pragma config FCMEN = OFF
+#pragma config IESO = OFF
+
+
+#pragma config PWRT = OFF
+#pragma config BOREN = SBORDIS
+#pragma config BORV = 3
+
+
+#pragma config WDT = OFF
+#pragma config WDTPS = 32768
+
+
+#pragma config MODE = MC
+#pragma config ADDRBW = ADDR20BIT
+#pragma config DATABW = DATA16BIT
+#pragma config WAIT = OFF
+
+
+#pragma config CCP2MX = PORTC
+#pragma config ECCPMX = PORTE
+#pragma config LPT1OSC = OFF
+#pragma config MCLRE = ON
+
+
+#pragma config STVREN = OFF
+#pragma config LVP = ON
+#pragma config BBSIZ = BB2K
+#pragma config XINST = OFF
+
+
+#pragma config CP0 = OFF
+#pragma config CP1 = OFF
+#pragma config CP2 = OFF
+#pragma config CP3 = OFF
+#pragma config CP4 = OFF
+#pragma config CP5 = OFF
+#pragma config CP6 = OFF
+#pragma config CP7 = OFF
+
+
+#pragma config CPB = OFF
+#pragma config CPD = OFF
+
+
+#pragma config WRT0 = OFF
+#pragma config WRT1 = OFF
+#pragma config WRT2 = OFF
+#pragma config WRT3 = OFF
+#pragma config WRT4 = OFF
+#pragma config WRT5 = OFF
+#pragma config WRT6 = OFF
+#pragma config WRT7 = OFF
+
+
+#pragma config WRTC = OFF
+#pragma config WRTB = OFF
+#pragma config WRTD = OFF
+
+
+#pragma config EBTR0 = OFF
+#pragma config EBTR1 = OFF
+#pragma config EBTR2 = OFF
+#pragma config EBTR3 = OFF
+#pragma config EBTR4 = OFF
+#pragma config EBTR5 = OFF
+#pragma config EBTR6 = OFF
+#pragma config EBTR7 = OFF
+
+
+#pragma config EBTRB = OFF
+
+# 26 "Current_Monitor.c"
 uint8_t Voltage_Drop =0,Current=0,Resistor=0;
 
-int Sample [50];
-char text[2]="\r ";
+uint8_t Sample [50];
 uint8_t b[3];
-uint8_t EEPROM_W=0;
-uint8_t Sample_Number=0;
-uint8_t EEPROM_address =0;
 int a=0;
 int x=0;
 uint8_t result_EEPROM=0;
 uint8_t EEPROM_read [50];
-int Sample_for_Average [50];
-int Average=0;
-char Keyboard=0;
+uint8_t Sample_for_Average [50];
+uint8_t Average=0;
+uint8_t Keyboard=0;
 
 void Initialize_Analog(void);
 void Analog_Capture_ON(void);
@@ -6972,7 +6968,7 @@ Send_to_UART();
 Initialize_Analog();
 Analog_Capture_ON ();
 
-for (int x=0,y=0;x<=50,y<=50;x++,y++)
+for (uint8_t x=0,y=0;x<=50,y<=50;x++,y++)
 {
 EEPROM_Write(x,Sample[y]);
 }
@@ -6993,48 +6989,27 @@ if(Keyboard=='S')
 sprintf(b,"Please wait...... \n");
 Send_to_UART();
 Analog_Capture_OFF();
-
-
-for(int x=0;x<=50;x++){
-
+for(int x=0;x<=50;x++)
+{
 EEPROM_Read(x);
-
 int i =0;
 i++;
 sprintf(b,"Sampling number %d: %d mA :\n",x,result_EEPROM);
-
 Send_to_UART();
 }
-
-
-
 int i =0;
 i++;
 sprintf(b,"Average of last 50 Samples: %d mA \n",Average);
-
 Send_to_UART();
-
-
-
 }
-
-# 202
+}
 }
 
 
-
-}
-
-
-
-
-void Initialize_UART(){
-
-
+void Initialize_UART()
+{
 TRISCbits.RC7=1;
 TRISCbits.RC6=0;
-
-
 
 
 TXSTA1bits.SYNC=0;
@@ -7043,9 +7018,8 @@ BAUDCON1bits.BRG16=0;
 SPBRG1=15;
 RCSTA1bits.SPEN=1;
 TXSTA1bits.TXEN=1;
-
-
 }
+
 
 void Read_UART_Input ()
 {
@@ -7054,10 +7028,9 @@ RCSTA1bits.CREN=1;
 while(PIR1bits.RC1IF==0);
 Keyboard=RCREG1;
 
-# 241
 }
 
-# 247
+
 void Send_to_UART ()
 {
 
@@ -7069,9 +7042,7 @@ while (b[i]!='\0')
 TXREG1=(b[i++]);
 _delay((unsigned long)((50)*(10000000/4000000.0)));
 while(PIR1bits.TX1IF==0);
-
 }
-
 }
 
 
@@ -7084,12 +7055,10 @@ TRISD=0x00;
 PORTD=0x00;
 PORTA=0x00;
 
-MEMCONbits.EBDIS=1;
+
 ADCON0=0b00000001;
 ADCON1=0b00000000;
 ADCON2=0b00000000;
-
-
 
 }
 
@@ -7116,16 +7085,11 @@ void Analog_Capture_OFF ()
 {
 ADCON0bits.ADON=0;
 
-
-
 }
 
-# 313
+
 void EEPROM_Write (uint8_t address,uint8_t value [])
 {
-
-
-
 
 EECON1bits.WREN=1;
 EEADR=address ;
@@ -7150,7 +7114,6 @@ EECON1bits.WREN = 0;
 void EEPROM_Read(uint8_t address)
 {
 
-# 346
 EEADR=address;
 EECON1bits.EEPGD=0;
 EECON1bits.CFGS=0;
@@ -7161,33 +7124,21 @@ Average_Function();
 
 }
 
+
 void Half_Hour_Tick ()
 {
-
-
 for(int x=0;x<=5;x++)
 {
-
 _delay((unsigned long)((1000)*(10000000/4000.0)));
-
 }
-
-
 }
-
 
 
 void EEPROM_test()
 {
-
-
 for (int x=0;x<50;x++)
 {
-
 Sample[x]=x;
-
-
-
 }
 
 }
