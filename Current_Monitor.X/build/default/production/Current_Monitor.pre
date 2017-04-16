@@ -6931,7 +6931,7 @@ extern time_t mktime(struct tm *);
 
 #pragma config EBTRB = OFF
 
-# 26 "Current_Monitor.c"
+# 15 "Current_Monitor.c"
 uint8_t Voltage_Drop =0,Current=0,Resistor=0;
 
 uint8_t Sample [50];
@@ -6981,12 +6981,12 @@ Send_to_UART();
 Read_UART_Input();
 if(Keyboard=='R')
 {
-RCONbits.RI=1;
+asm("CLRF PCLATH");
+asm ("GOTO 0");
 }
 
 if(Keyboard=='S')
 {
-sprintf(b,"Please wait...... \n");
 Send_to_UART();
 Analog_Capture_OFF();
 for(int x=0;x<=50;x++)

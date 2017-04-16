@@ -1,15 +1,4 @@
 
-
-// #pragma config statements should precede project file includes.
-// Use project enums instead of #define for ON and OFF.
-
-// #pragma config statements should precede project file includes.
-// Use project enums instead of #define for ON and OFF.
-
-
-
-// #pragma config statements should precede project file includes.
-// Use project enums instead of #define for ON and OFF.
 #include <xc.h>
 #include <stdint.h>
 #include <stdio.h>
@@ -72,12 +61,12 @@ while(1)
         Read_UART_Input();
         if(Keyboard=='R')
         {
-         RCONbits.RI=1;   
+         asm("CLRF PCLATH");//Clear program counter (instruction pointer)
+         asm ("GOTO 0"); //Jump at memory location 0  
         }
-
+        
         if(Keyboard=='S') 
         {
-        sprintf(b,"Please wait...... \n");
         Send_to_UART();    
         Analog_Capture_OFF();
         for(int x=0;x<=50;x++)

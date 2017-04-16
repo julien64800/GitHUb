@@ -30,23 +30,23 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
 "5406
 [v _TRISA `Vuc ~T0 @X0 0 e@3986 ]
-"41 Current_Monitor.c
+"30 Current_Monitor.c
 [v _Initialize_UART `(v ~T0 @X0 0 ef ]
 "194 /Applications/microchip/xc8/v1.41/include/stdio.h
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
-"43 Current_Monitor.c
+"32 Current_Monitor.c
 [v _Send_to_UART `(v ~T0 @X0 0 ef ]
-"38
+"27
 [v _Initialize_Analog `(v ~T0 @X0 0 ef ]
-"39
+"28
 [v _Analog_Capture_ON `(v ~T0 @X0 0 ef ]
-"44
+"33
 [v _EEPROM_Write `(v ~T0 @X0 0 ef2`uc`*uc ]
-"42
+"31
 [v _Read_UART_Input `(v ~T0 @X0 0 ef ]
-"40
+"29
 [v _Analog_Capture_OFF `(v ~T0 @X0 0 ef ]
-"45
+"34
 [v _EEPROM_Read `(v ~T0 @X0 0 ef1`uc ]
 "5859 /Applications/microchip/xc8/v1.41/include/pic18f8722.h
 [s S219 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -224,7 +224,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _INTCONbits `VS488 ~T0 @X0 0 e@4082 ]
 "8234
 [v _EECON2 `Vuc ~T0 @X0 0 e@4007 ]
-"48 Current_Monitor.c
+"37 Current_Monitor.c
 [v _Average_Function `(v ~T0 @X0 0 ef ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
@@ -5457,7 +5457,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x EBTR7=OFF ]
 "120
 [p x EBTRB=OFF ]
-"26 Current_Monitor.c
+"15 Current_Monitor.c
 [v _Voltage_Drop `uc ~T0 @X0 1 e ]
 [i _Voltage_Drop
 -> -> 0 `i `uc
@@ -5470,643 +5470,642 @@ Version 3.2 HI-TECH Software Intermediate Code
 [i _Resistor
 -> -> 0 `i `uc
 ]
-[; ;Current_Monitor.c: 26: uint8_t Voltage_Drop =0,Current=0,Resistor=0;
-"28
+[; ;Current_Monitor.c: 15: uint8_t Voltage_Drop =0,Current=0,Resistor=0;
+"17
 [v _Sample `uc ~T0 @X0 -> 50 `i e ]
-[; ;Current_Monitor.c: 28: uint8_t Sample [50];
-"29
+[; ;Current_Monitor.c: 17: uint8_t Sample [50];
+"18
 [v _b `uc ~T0 @X0 -> 3 `i e ]
-[; ;Current_Monitor.c: 29: uint8_t b[3];
-"30
+[; ;Current_Monitor.c: 18: uint8_t b[3];
+"19
 [v _a `i ~T0 @X0 1 e ]
 [i _a
 -> 0 `i
 ]
-[; ;Current_Monitor.c: 30: int a=0;
-"31
+[; ;Current_Monitor.c: 19: int a=0;
+"20
 [v _x `i ~T0 @X0 1 e ]
 [i _x
 -> 0 `i
 ]
-[; ;Current_Monitor.c: 31: int x=0;
-"32
+[; ;Current_Monitor.c: 20: int x=0;
+"21
 [v _result_EEPROM `uc ~T0 @X0 1 e ]
 [i _result_EEPROM
 -> -> 0 `i `uc
 ]
-[; ;Current_Monitor.c: 32: uint8_t result_EEPROM=0;
-"33
+[; ;Current_Monitor.c: 21: uint8_t result_EEPROM=0;
+"22
 [v _EEPROM_read `uc ~T0 @X0 -> 50 `i e ]
-[; ;Current_Monitor.c: 33: uint8_t EEPROM_read [50];
-"34
+[; ;Current_Monitor.c: 22: uint8_t EEPROM_read [50];
+"23
 [v _Sample_for_Average `uc ~T0 @X0 -> 50 `i e ]
-[; ;Current_Monitor.c: 34: uint8_t Sample_for_Average [50];
-"35
+[; ;Current_Monitor.c: 23: uint8_t Sample_for_Average [50];
+"24
 [v _Average `uc ~T0 @X0 1 e ]
 [i _Average
 -> -> 0 `i `uc
 ]
-[; ;Current_Monitor.c: 35: uint8_t Average=0;
-"36
+[; ;Current_Monitor.c: 24: uint8_t Average=0;
+"25
 [v _Keyboard `uc ~T0 @X0 1 e ]
 [i _Keyboard
 -> -> 0 `i `uc
 ]
-[; ;Current_Monitor.c: 36: uint8_t Keyboard=0;
-[; ;Current_Monitor.c: 38: void Initialize_Analog(void);
-[; ;Current_Monitor.c: 39: void Analog_Capture_ON(void);
-[; ;Current_Monitor.c: 40: void Analog_Capture_OFF(void);
-[; ;Current_Monitor.c: 41: void Initialize_UART(void);
-[; ;Current_Monitor.c: 42: void Read_UART_Input ();
-[; ;Current_Monitor.c: 43: void Send_to_UART ();
-[; ;Current_Monitor.c: 44: void EEPROM_Write(uint8_t,uint8_t[]);
-[; ;Current_Monitor.c: 45: void EEPROM_Read(uint8_t);
-[; ;Current_Monitor.c: 46: void Half_Hour_Tick ();
-[; ;Current_Monitor.c: 47: void EEPROM_test ();
-[; ;Current_Monitor.c: 48: void Average_Function ();
-"51
+[; ;Current_Monitor.c: 25: uint8_t Keyboard=0;
+[; ;Current_Monitor.c: 27: void Initialize_Analog(void);
+[; ;Current_Monitor.c: 28: void Analog_Capture_ON(void);
+[; ;Current_Monitor.c: 29: void Analog_Capture_OFF(void);
+[; ;Current_Monitor.c: 30: void Initialize_UART(void);
+[; ;Current_Monitor.c: 31: void Read_UART_Input ();
+[; ;Current_Monitor.c: 32: void Send_to_UART ();
+[; ;Current_Monitor.c: 33: void EEPROM_Write(uint8_t,uint8_t[]);
+[; ;Current_Monitor.c: 34: void EEPROM_Read(uint8_t);
+[; ;Current_Monitor.c: 35: void Half_Hour_Tick ();
+[; ;Current_Monitor.c: 36: void EEPROM_test ();
+[; ;Current_Monitor.c: 37: void Average_Function ();
+"40
 [v _main `(v ~T0 @X0 1 ef ]
-"52
+"41
 {
-[; ;Current_Monitor.c: 51: void main( void )
-[; ;Current_Monitor.c: 52: {
+[; ;Current_Monitor.c: 40: void main( void )
+[; ;Current_Monitor.c: 41: {
 [e :U _main ]
 [f ]
-[; ;Current_Monitor.c: 53: RCONbits.RI=0;
-"53
+[; ;Current_Monitor.c: 42: RCONbits.RI=0;
+"42
 [e = . . _RCONbits 6 4 -> -> 0 `i `uc ]
-[; ;Current_Monitor.c: 54: TRISD=0x00;
-"54
+[; ;Current_Monitor.c: 43: TRISD=0x00;
+"43
 [e = _TRISD -> -> 0 `i `uc ]
-[; ;Current_Monitor.c: 55: TRISA=0xFF;
-"55
+[; ;Current_Monitor.c: 44: TRISA=0xFF;
+"44
 [e = _TRISA -> -> 255 `i `uc ]
-[; ;Current_Monitor.c: 56: Initialize_UART();
-"56
+[; ;Current_Monitor.c: 45: Initialize_UART();
+"45
 [e ( _Initialize_UART ..  ]
-[; ;Current_Monitor.c: 57: sprintf(b,"Acquisition in progress please wait: \n");
-"57
+[; ;Current_Monitor.c: 46: sprintf(b,"Acquisition in progress please wait: \n");
+"46
 [e ( _sprintf (1 , &U _b :s 1C ]
-[; ;Current_Monitor.c: 58: Send_to_UART();
-"58
+[; ;Current_Monitor.c: 47: Send_to_UART();
+"47
 [e ( _Send_to_UART ..  ]
-[; ;Current_Monitor.c: 59: Initialize_Analog();
-"59
+[; ;Current_Monitor.c: 48: Initialize_Analog();
+"48
 [e ( _Initialize_Analog ..  ]
-[; ;Current_Monitor.c: 60: Analog_Capture_ON ();
-"60
+[; ;Current_Monitor.c: 49: Analog_Capture_ON ();
+"49
 [e ( _Analog_Capture_ON ..  ]
-[; ;Current_Monitor.c: 62: for (uint8_t x=0,y=0;x<=50,y<=50;x++,y++)
-"62
+[; ;Current_Monitor.c: 51: for (uint8_t x=0,y=0;x<=50,y<=50;x++,y++)
+"51
 {
 [v _x `uc ~T0 @X0 1 a ]
 [e = _x -> -> 0 `i `uc ]
 [v _y `uc ~T0 @X0 1 a ]
 [e = _y -> -> 0 `i `uc ]
 [e $U 506  ]
-"63
+"52
 [e :U 503 ]
-[; ;Current_Monitor.c: 63: {
+[; ;Current_Monitor.c: 52: {
 {
-[; ;Current_Monitor.c: 64: EEPROM_Write(x,Sample[y]);
-"64
+[; ;Current_Monitor.c: 53: EEPROM_Write(x,Sample[y]);
+"53
 [e ( _EEPROM_Write (2 , _x -> *U + &U _Sample * -> _y `ux -> -> # *U &U _Sample `ui `ux `*uc ]
-"65
+"54
 }
-"62
+"51
 [e ; ++ _x -> -> 1 `i `uc ++ _y -> -> 1 `i `uc ]
 [e :U 506 ]
 [e $ != ; -> <= -> _x `i -> 50 `i `i -> <= -> _y `i -> 50 `i `i -> 0 `i 503  ]
 [e :U 504 ]
-"65
+"54
 }
-[; ;Current_Monitor.c: 65: }
-[; ;Current_Monitor.c: 68: while(1)
-"68
+[; ;Current_Monitor.c: 54: }
+[; ;Current_Monitor.c: 57: while(1)
+"57
 [e :U 508 ]
+[; ;Current_Monitor.c: 58: {
+"58
+{
+[; ;Current_Monitor.c: 59: sprintf(b,"Acquisition completed press S to read or R to reset: \n");
+"59
+[e ( _sprintf (1 , &U _b :s 2C ]
+[; ;Current_Monitor.c: 60: Send_to_UART();
+"60
+[e ( _Send_to_UART ..  ]
+[; ;Current_Monitor.c: 61: Read_UART_Input();
+"61
+[e ( _Read_UART_Input ..  ]
+[; ;Current_Monitor.c: 62: if(Keyboard=='R')
+"62
+[e $ ! == -> _Keyboard `ui -> 82 `ui 510  ]
+[; ;Current_Monitor.c: 63: {
+"63
+{
+[; ;Current_Monitor.c: 64: asm("CLRF PCLATH");
+"64
+[; <" CLRF PCLATH ;# ">
+[; ;Current_Monitor.c: 65: asm ("GOTO 0");
+"65
+[; <" GOTO 0 ;# ">
+"66
+}
+[e :U 510 ]
+[; ;Current_Monitor.c: 66: }
+[; ;Current_Monitor.c: 68: if(Keyboard=='S')
+"68
+[e $ ! == -> _Keyboard `ui -> 83 `ui 511  ]
 [; ;Current_Monitor.c: 69: {
 "69
 {
-[; ;Current_Monitor.c: 70: sprintf(b,"Acquisition completed press S to read or R to reset: \n");
+[; ;Current_Monitor.c: 70: Send_to_UART();
 "70
-[e ( _sprintf (1 , &U _b :s 2C ]
-[; ;Current_Monitor.c: 71: Send_to_UART();
+[e ( _Send_to_UART ..  ]
+[; ;Current_Monitor.c: 71: Analog_Capture_OFF();
 "71
-[e ( _Send_to_UART ..  ]
-[; ;Current_Monitor.c: 72: Read_UART_Input();
-"72
-[e ( _Read_UART_Input ..  ]
-[; ;Current_Monitor.c: 73: if(Keyboard=='R')
-"73
-[e $ ! == -> _Keyboard `ui -> 82 `ui 510  ]
-[; ;Current_Monitor.c: 74: {
-"74
-{
-[; ;Current_Monitor.c: 75: RCONbits.RI=1;
-"75
-[e = . . _RCONbits 6 4 -> -> 1 `i `uc ]
-"76
-}
-[e :U 510 ]
-[; ;Current_Monitor.c: 76: }
-[; ;Current_Monitor.c: 78: if(Keyboard=='S')
-"78
-[e $ ! == -> _Keyboard `ui -> 83 `ui 511  ]
-[; ;Current_Monitor.c: 79: {
-"79
-{
-[; ;Current_Monitor.c: 80: sprintf(b,"Please wait...... \n");
-"80
-[e ( _sprintf (1 , &U _b :s 3C ]
-[; ;Current_Monitor.c: 81: Send_to_UART();
-"81
-[e ( _Send_to_UART ..  ]
-[; ;Current_Monitor.c: 82: Analog_Capture_OFF();
-"82
 [e ( _Analog_Capture_OFF ..  ]
-[; ;Current_Monitor.c: 83: for(int x=0;x<=50;x++)
-"83
+[; ;Current_Monitor.c: 72: for(int x=0;x<=50;x++)
+"72
 {
 [v _x `i ~T0 @X0 1 a ]
 [e = _x -> 0 `i ]
 [e $ <= _x -> 50 `i 512  ]
 [e $U 513  ]
-"84
+"73
 [e :U 512 ]
-[; ;Current_Monitor.c: 84: {
+[; ;Current_Monitor.c: 73: {
 {
-[; ;Current_Monitor.c: 85: EEPROM_Read(x);
-"85
+[; ;Current_Monitor.c: 74: EEPROM_Read(x);
+"74
 [e ( _EEPROM_Read (1 -> _x `uc ]
-"86
+"75
 [v _i `i ~T0 @X0 1 a ]
-[; ;Current_Monitor.c: 86: int i =0;
+[; ;Current_Monitor.c: 75: int i =0;
 [e = _i -> 0 `i ]
-[; ;Current_Monitor.c: 87: i++;
-"87
+[; ;Current_Monitor.c: 76: i++;
+"76
 [e ++ _i -> 1 `i ]
-[; ;Current_Monitor.c: 88: sprintf(b,"Sampling number %d: %d mA :\n",x,result_EEPROM);
-"88
-[e ( _sprintf (1 , , (. , &U _b :s 4C _x -> _result_EEPROM `i ]
-[; ;Current_Monitor.c: 89: Send_to_UART();
-"89
+[; ;Current_Monitor.c: 77: sprintf(b,"Sampling number %d: %d mA :\n",x,result_EEPROM);
+"77
+[e ( _sprintf (1 , , (. , &U _b :s 3C _x -> _result_EEPROM `i ]
+[; ;Current_Monitor.c: 78: Send_to_UART();
+"78
 [e ( _Send_to_UART ..  ]
-"90
+"79
 }
-"83
+"72
 [e ++ _x -> 1 `i ]
 [e $ <= _x -> 50 `i 512  ]
 [e :U 513 ]
-"90
+"79
 }
-"91
+"80
 [v _i `i ~T0 @X0 1 a ]
-[; ;Current_Monitor.c: 90: }
-[; ;Current_Monitor.c: 91: int i =0;
+[; ;Current_Monitor.c: 79: }
+[; ;Current_Monitor.c: 80: int i =0;
 [e = _i -> 0 `i ]
-[; ;Current_Monitor.c: 92: i++;
-"92
+[; ;Current_Monitor.c: 81: i++;
+"81
 [e ++ _i -> 1 `i ]
-[; ;Current_Monitor.c: 93: sprintf(b,"Average of last 50 Samples: %d mA \n",Average);
-"93
-[e ( _sprintf (1 , (. , &U _b :s 5C -> _Average `i ]
-[; ;Current_Monitor.c: 94: Send_to_UART();
-"94
+[; ;Current_Monitor.c: 82: sprintf(b,"Average of last 50 Samples: %d mA \n",Average);
+"82
+[e ( _sprintf (1 , (. , &U _b :s 4C -> _Average `i ]
+[; ;Current_Monitor.c: 83: Send_to_UART();
+"83
 [e ( _Send_to_UART ..  ]
-"95
+"84
 }
 [e :U 511 ]
-"96
+"85
 }
 [e :U 507 ]
-"68
+"57
 [e $U 508  ]
 [e :U 509 ]
-[; ;Current_Monitor.c: 95: }
-[; ;Current_Monitor.c: 96: }
-[; ;Current_Monitor.c: 97: }
-"97
+[; ;Current_Monitor.c: 84: }
+[; ;Current_Monitor.c: 85: }
+[; ;Current_Monitor.c: 86: }
+"86
 [e :UE 502 ]
 }
-"100
+"89
 [v _Initialize_UART `(v ~T0 @X0 1 ef ]
-"101
+"90
 {
-[; ;Current_Monitor.c: 100: void Initialize_UART()
-[; ;Current_Monitor.c: 101: {
+[; ;Current_Monitor.c: 89: void Initialize_UART()
+[; ;Current_Monitor.c: 90: {
 [e :U _Initialize_UART ]
 [f ]
-[; ;Current_Monitor.c: 102: TRISCbits.RC7=1;
-"102
+[; ;Current_Monitor.c: 91: TRISCbits.RC7=1;
+"91
 [e = . . _TRISCbits 1 7 -> -> 1 `i `uc ]
-[; ;Current_Monitor.c: 103: TRISCbits.RC6=0;
-"103
+[; ;Current_Monitor.c: 92: TRISCbits.RC6=0;
+"92
 [e = . . _TRISCbits 1 6 -> -> 0 `i `uc ]
-[; ;Current_Monitor.c: 106: TXSTA1bits.SYNC=0;
-"106
+[; ;Current_Monitor.c: 95: TXSTA1bits.SYNC=0;
+"95
 [e = . . _TXSTA1bits 0 4 -> -> 0 `i `uc ]
-[; ;Current_Monitor.c: 107: TXSTA1bits.BRGH=0;
-"107
+[; ;Current_Monitor.c: 96: TXSTA1bits.BRGH=0;
+"96
 [e = . . _TXSTA1bits 0 2 -> -> 0 `i `uc ]
-[; ;Current_Monitor.c: 108: BAUDCON1bits.BRG16=0;
-"108
+[; ;Current_Monitor.c: 97: BAUDCON1bits.BRG16=0;
+"97
 [e = . . _BAUDCON1bits 0 3 -> -> 0 `i `uc ]
-[; ;Current_Monitor.c: 109: SPBRG1=15;
-"109
+[; ;Current_Monitor.c: 98: SPBRG1=15;
+"98
 [e = _SPBRG1 -> -> 15 `i `uc ]
-[; ;Current_Monitor.c: 110: RCSTA1bits.SPEN=1;
-"110
+[; ;Current_Monitor.c: 99: RCSTA1bits.SPEN=1;
+"99
 [e = . . _RCSTA1bits 0 7 -> -> 1 `i `uc ]
-[; ;Current_Monitor.c: 111: TXSTA1bits.TXEN=1;
-"111
+[; ;Current_Monitor.c: 100: TXSTA1bits.TXEN=1;
+"100
 [e = . . _TXSTA1bits 0 5 -> -> 1 `i `uc ]
-[; ;Current_Monitor.c: 112: }
-"112
+[; ;Current_Monitor.c: 101: }
+"101
 [e :UE 515 ]
 }
-"115
+"104
 [v _Read_UART_Input `(v ~T0 @X0 1 ef ]
-"116
+"105
 {
-[; ;Current_Monitor.c: 115: void Read_UART_Input ()
-[; ;Current_Monitor.c: 116: {
+[; ;Current_Monitor.c: 104: void Read_UART_Input ()
+[; ;Current_Monitor.c: 105: {
 [e :U _Read_UART_Input ]
 [f ]
-[; ;Current_Monitor.c: 118: RCSTA1bits.CREN=1;
-"118
+[; ;Current_Monitor.c: 107: RCSTA1bits.CREN=1;
+"107
 [e = . . _RCSTA1bits 0 4 -> -> 1 `i `uc ]
-[; ;Current_Monitor.c: 119: while(PIR1bits.RC1IF==0);
-"119
+[; ;Current_Monitor.c: 108: while(PIR1bits.RC1IF==0);
+"108
 [e $U 517  ]
 [e :U 518 ]
 [e :U 517 ]
 [e $ == -> . . _PIR1bits 0 5 `i -> 0 `i 518  ]
 [e :U 519 ]
-[; ;Current_Monitor.c: 120: Keyboard=RCREG1;
-"120
+[; ;Current_Monitor.c: 109: Keyboard=RCREG1;
+"109
 [e = _Keyboard _RCREG1 ]
-[; ;Current_Monitor.c: 122: }
-"122
+[; ;Current_Monitor.c: 111: }
+"111
 [e :UE 516 ]
 }
-"125
+"114
 [v _Send_to_UART `(v ~T0 @X0 1 ef ]
-"126
+"115
 {
-[; ;Current_Monitor.c: 125: void Send_to_UART ()
-[; ;Current_Monitor.c: 126: {
+[; ;Current_Monitor.c: 114: void Send_to_UART ()
+[; ;Current_Monitor.c: 115: {
 [e :U _Send_to_UART ]
 [f ]
-"128
+"117
 [v _i `i ~T0 @X0 1 a ]
-[; ;Current_Monitor.c: 128: int i=0;
+[; ;Current_Monitor.c: 117: int i=0;
 [e = _i -> 0 `i ]
-[; ;Current_Monitor.c: 130: while (b[i]!='\0')
-"130
+[; ;Current_Monitor.c: 119: while (b[i]!='\0')
+"119
 [e $U 521  ]
 [e :U 522 ]
-[; ;Current_Monitor.c: 131: {
-"131
+[; ;Current_Monitor.c: 120: {
+"120
 {
-[; ;Current_Monitor.c: 133: TXREG1=(b[i++]);
-"133
+[; ;Current_Monitor.c: 122: TXREG1=(b[i++]);
+"122
 [e = _TXREG1 *U + &U _b * -> -> ++ _i -> 1 `i `ui `ux -> -> # *U &U _b `ui `ux ]
-[; ;Current_Monitor.c: 134: _delay((unsigned long)((50)*(10000000/4000000.0)));
-"134
+[; ;Current_Monitor.c: 123: _delay((unsigned long)((50)*(10000000/4000000.0)));
+"123
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 10000000 `l `d .4000000.0 `ul ]
-[; ;Current_Monitor.c: 135: while(PIR1bits.TX1IF==0);
-"135
+[; ;Current_Monitor.c: 124: while(PIR1bits.TX1IF==0);
+"124
 [e $U 524  ]
 [e :U 525 ]
 [e :U 524 ]
 [e $ == -> . . _PIR1bits 0 4 `i -> 0 `i 525  ]
 [e :U 526 ]
-"136
+"125
 }
 [e :U 521 ]
-"130
+"119
 [e $ != -> *U + &U _b * -> -> _i `ui `ux -> -> # *U &U _b `ui `ux `ui -> 0 `ui 522  ]
 [e :U 523 ]
-[; ;Current_Monitor.c: 136: }
-[; ;Current_Monitor.c: 137: }
-"137
+[; ;Current_Monitor.c: 125: }
+[; ;Current_Monitor.c: 126: }
+"126
 [e :UE 520 ]
 }
-"140
+"129
 [v _Initialize_Analog `(v ~T0 @X0 1 ef ]
-"141
+"130
 {
-[; ;Current_Monitor.c: 140: void Initialize_Analog(void)
-[; ;Current_Monitor.c: 141: {
+[; ;Current_Monitor.c: 129: void Initialize_Analog(void)
+[; ;Current_Monitor.c: 130: {
 [e :U _Initialize_Analog ]
 [f ]
-[; ;Current_Monitor.c: 144: TRISA=0xff;
-"144
+[; ;Current_Monitor.c: 133: TRISA=0xff;
+"133
 [e = _TRISA -> -> 255 `i `uc ]
-[; ;Current_Monitor.c: 145: TRISD=0x00;
-"145
+[; ;Current_Monitor.c: 134: TRISD=0x00;
+"134
 [e = _TRISD -> -> 0 `i `uc ]
-[; ;Current_Monitor.c: 146: PORTD=0x00;
-"146
+[; ;Current_Monitor.c: 135: PORTD=0x00;
+"135
 [e = _PORTD -> -> 0 `i `uc ]
-[; ;Current_Monitor.c: 147: PORTA=0x00;
-"147
+[; ;Current_Monitor.c: 136: PORTA=0x00;
+"136
 [e = _PORTA -> -> 0 `i `uc ]
-[; ;Current_Monitor.c: 150: ADCON0=0b00000001;
-"150
+[; ;Current_Monitor.c: 139: ADCON0=0b00000001;
+"139
 [e = _ADCON0 -> -> 1 `i `uc ]
-[; ;Current_Monitor.c: 151: ADCON1=0b00000000;
-"151
+[; ;Current_Monitor.c: 140: ADCON1=0b00000000;
+"140
 [e = _ADCON1 -> -> 0 `i `uc ]
-[; ;Current_Monitor.c: 152: ADCON2=0b00000000;
-"152
+[; ;Current_Monitor.c: 141: ADCON2=0b00000000;
+"141
 [e = _ADCON2 -> -> 0 `i `uc ]
-[; ;Current_Monitor.c: 154: }
-"154
+[; ;Current_Monitor.c: 143: }
+"143
 [e :UE 527 ]
 }
-"157
+"146
 [v _Analog_Capture_ON `(v ~T0 @X0 1 ef ]
-"158
+"147
 {
-[; ;Current_Monitor.c: 157: void Analog_Capture_ON ()
-[; ;Current_Monitor.c: 158: {
+[; ;Current_Monitor.c: 146: void Analog_Capture_ON ()
+[; ;Current_Monitor.c: 147: {
 [e :U _Analog_Capture_ON ]
 [f ]
-[; ;Current_Monitor.c: 160: for(int x=0;x<=50;x++)
-"160
+[; ;Current_Monitor.c: 149: for(int x=0;x<=50;x++)
+"149
 {
 [v _x `i ~T0 @X0 1 a ]
 [e = _x -> 0 `i ]
 [e $ <= _x -> 50 `i 529  ]
 [e $U 530  ]
-"161
+"150
 [e :U 529 ]
-[; ;Current_Monitor.c: 161: {
+[; ;Current_Monitor.c: 150: {
 {
-[; ;Current_Monitor.c: 162: ADCON0bits.GO_DONE=1;
-"162
+[; ;Current_Monitor.c: 151: ADCON0bits.GO_DONE=1;
+"151
 [e = . . _ADCON0bits 3 1 -> -> 1 `i `uc ]
-[; ;Current_Monitor.c: 163: while(ADCON0bits.GO_DONE==1);
-"163
+[; ;Current_Monitor.c: 152: while(ADCON0bits.GO_DONE==1);
+"152
 [e $U 532  ]
 [e :U 533 ]
 [e :U 532 ]
 [e $ == -> . . _ADCON0bits 3 1 `i -> 1 `i 533  ]
 [e :U 534 ]
-[; ;Current_Monitor.c: 164: Sample[x]=ADRESH;
-"164
+[; ;Current_Monitor.c: 153: Sample[x]=ADRESH;
+"153
 [e = *U + &U _Sample * -> -> _x `ui `ux -> -> # *U &U _Sample `ui `ux _ADRESH ]
-[; ;Current_Monitor.c: 165: Initialize_Analog;
-"165
+[; ;Current_Monitor.c: 154: Initialize_Analog;
+"154
 [e &U _Initialize_Analog ]
-[; ;Current_Monitor.c: 166: _delay((unsigned long)((500)*(10000000/4000.0)));
-"166
+[; ;Current_Monitor.c: 155: _delay((unsigned long)((500)*(10000000/4000.0)));
+"155
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
-[; ;Current_Monitor.c: 167: if(x==50)
-"167
+[; ;Current_Monitor.c: 156: if(x==50)
+"156
 [e $ ! == _x -> 50 `i 535  ]
-[; ;Current_Monitor.c: 168: {
-"168
+[; ;Current_Monitor.c: 157: {
+"157
 {
-[; ;Current_Monitor.c: 169: x=51;
-"169
+[; ;Current_Monitor.c: 158: x=51;
+"158
 [e = _x -> 51 `i ]
-"170
+"159
 }
 [e :U 535 ]
-"171
-}
 "160
+}
+"149
 [e ++ _x -> 1 `i ]
 [e $ <= _x -> 50 `i 529  ]
 [e :U 530 ]
-"171
+"160
 }
-[; ;Current_Monitor.c: 170: }
-[; ;Current_Monitor.c: 171: }
-[; ;Current_Monitor.c: 173: }
-"173
+[; ;Current_Monitor.c: 159: }
+[; ;Current_Monitor.c: 160: }
+[; ;Current_Monitor.c: 162: }
+"162
 [e :UE 528 ]
 }
-"175
+"164
 [v _Analog_Capture_OFF `(v ~T0 @X0 1 ef ]
-"176
+"165
 {
-[; ;Current_Monitor.c: 175: void Analog_Capture_OFF ()
-[; ;Current_Monitor.c: 176: {
+[; ;Current_Monitor.c: 164: void Analog_Capture_OFF ()
+[; ;Current_Monitor.c: 165: {
 [e :U _Analog_Capture_OFF ]
 [f ]
-[; ;Current_Monitor.c: 177: ADCON0bits.ADON=0;
-"177
+[; ;Current_Monitor.c: 166: ADCON0bits.ADON=0;
+"166
 [e = . . _ADCON0bits 1 0 -> -> 0 `i `uc ]
-[; ;Current_Monitor.c: 179: }
-"179
+[; ;Current_Monitor.c: 168: }
+"168
 [e :UE 536 ]
 }
-"182
+"171
 [v _EEPROM_Write `(v ~T0 @X0 1 ef2`uc`*uc ]
-"183
+"172
 {
-[; ;Current_Monitor.c: 182: void EEPROM_Write (uint8_t address,uint8_t value [])
-[; ;Current_Monitor.c: 183: {
+[; ;Current_Monitor.c: 171: void EEPROM_Write (uint8_t address,uint8_t value [])
+[; ;Current_Monitor.c: 172: {
 [e :U _EEPROM_Write ]
-"182
+"171
 [v _address `uc ~T0 @X0 1 r1 ]
 [v _value `*uc ~T0 @X0 1 r2 ]
-"183
+"172
 [f ]
-[; ;Current_Monitor.c: 185: EECON1bits.WREN=1;
-"185
+[; ;Current_Monitor.c: 174: EECON1bits.WREN=1;
+"174
 [e = . . _EECON1bits 0 2 -> -> 1 `i `uc ]
-[; ;Current_Monitor.c: 186: EEADR=address ;
-"186
+[; ;Current_Monitor.c: 175: EEADR=address ;
+"175
 [e = _EEADR _address ]
-[; ;Current_Monitor.c: 187: EEDATA=value;
-"187
+[; ;Current_Monitor.c: 176: EEDATA=value;
+"176
 [e = _EEDATA -> _value `Vuc ]
-[; ;Current_Monitor.c: 188: EECON1bits.EEPGD=0;
-"188
+[; ;Current_Monitor.c: 177: EECON1bits.EEPGD=0;
+"177
 [e = . . _EECON1bits 0 7 -> -> 0 `i `uc ]
-[; ;Current_Monitor.c: 189: EECON1bits.CFGS=0;
-"189
+[; ;Current_Monitor.c: 178: EECON1bits.CFGS=0;
+"178
 [e = . . _EECON1bits 0 6 -> -> 0 `i `uc ]
-[; ;Current_Monitor.c: 190: INTCONbits.GIE=0;
-"190
+[; ;Current_Monitor.c: 179: INTCONbits.GIE=0;
+"179
 [e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
-[; ;Current_Monitor.c: 193: EECON2=0x55;
-"193
+[; ;Current_Monitor.c: 182: EECON2=0x55;
+"182
 [e = _EECON2 -> -> 85 `i `uc ]
-[; ;Current_Monitor.c: 194: EECON2=0xAA;
-"194
+[; ;Current_Monitor.c: 183: EECON2=0xAA;
+"183
 [e = _EECON2 -> -> 170 `i `uc ]
-[; ;Current_Monitor.c: 195: EECON1bits.WR=1;
-"195
+[; ;Current_Monitor.c: 184: EECON1bits.WR=1;
+"184
 [e = . . _EECON1bits 0 1 -> -> 1 `i `uc ]
-[; ;Current_Monitor.c: 198: INTCONbits.GIE=1;
-"198
+[; ;Current_Monitor.c: 187: INTCONbits.GIE=1;
+"187
 [e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-[; ;Current_Monitor.c: 199: while(EECON1bits.WR==1);
-"199
+[; ;Current_Monitor.c: 188: while(EECON1bits.WR==1);
+"188
 [e $U 538  ]
 [e :U 539 ]
 [e :U 538 ]
 [e $ == -> . . _EECON1bits 0 1 `i -> 1 `i 539  ]
 [e :U 540 ]
-[; ;Current_Monitor.c: 200: EECON1bits.WREN = 0;
-"200
+[; ;Current_Monitor.c: 189: EECON1bits.WREN = 0;
+"189
 [e = . . _EECON1bits 0 2 -> -> 0 `i `uc ]
-[; ;Current_Monitor.c: 202: }
-"202
+[; ;Current_Monitor.c: 191: }
+"191
 [e :UE 537 ]
 }
-"205
+"194
 [v _EEPROM_Read `(v ~T0 @X0 1 ef1`uc ]
-"206
+"195
 {
-[; ;Current_Monitor.c: 205: void EEPROM_Read(uint8_t address)
-[; ;Current_Monitor.c: 206: {
+[; ;Current_Monitor.c: 194: void EEPROM_Read(uint8_t address)
+[; ;Current_Monitor.c: 195: {
 [e :U _EEPROM_Read ]
-"205
+"194
 [v _address `uc ~T0 @X0 1 r1 ]
-"206
+"195
 [f ]
-[; ;Current_Monitor.c: 208: EEADR=address;
-"208
+[; ;Current_Monitor.c: 197: EEADR=address;
+"197
 [e = _EEADR _address ]
-[; ;Current_Monitor.c: 209: EECON1bits.EEPGD=0;
-"209
+[; ;Current_Monitor.c: 198: EECON1bits.EEPGD=0;
+"198
 [e = . . _EECON1bits 0 7 -> -> 0 `i `uc ]
-[; ;Current_Monitor.c: 210: EECON1bits.CFGS=0;
-"210
+[; ;Current_Monitor.c: 199: EECON1bits.CFGS=0;
+"199
 [e = . . _EECON1bits 0 6 -> -> 0 `i `uc ]
-[; ;Current_Monitor.c: 211: EECON1bits.RD=1;
-"211
+[; ;Current_Monitor.c: 200: EECON1bits.RD=1;
+"200
 [e = . . _EECON1bits 0 0 -> -> 1 `i `uc ]
-[; ;Current_Monitor.c: 212: result_EEPROM=EEDATA;
-"212
+[; ;Current_Monitor.c: 201: result_EEPROM=EEDATA;
+"201
 [e = _result_EEPROM _EEDATA ]
-[; ;Current_Monitor.c: 213: Sample_for_Average[x++]=result_EEPROM;
-"213
+[; ;Current_Monitor.c: 202: Sample_for_Average[x++]=result_EEPROM;
+"202
 [e = *U + &U _Sample_for_Average * -> -> ++ _x -> 1 `i `ui `ux -> -> # *U &U _Sample_for_Average `ui `ux _result_EEPROM ]
-[; ;Current_Monitor.c: 214: Average_Function();
-"214
+[; ;Current_Monitor.c: 203: Average_Function();
+"203
 [e ( _Average_Function ..  ]
-[; ;Current_Monitor.c: 216: }
-"216
+[; ;Current_Monitor.c: 205: }
+"205
 [e :UE 541 ]
 }
-"219
+"208
 [v _Half_Hour_Tick `(v ~T0 @X0 1 ef ]
-"220
+"209
 {
-[; ;Current_Monitor.c: 219: void Half_Hour_Tick ()
-[; ;Current_Monitor.c: 220: {
+[; ;Current_Monitor.c: 208: void Half_Hour_Tick ()
+[; ;Current_Monitor.c: 209: {
 [e :U _Half_Hour_Tick ]
 [f ]
-[; ;Current_Monitor.c: 221: for(int x=0;x<=5;x++)
-"221
+[; ;Current_Monitor.c: 210: for(int x=0;x<=5;x++)
+"210
 {
 [v _x `i ~T0 @X0 1 a ]
 [e = _x -> 0 `i ]
 [e $ <= _x -> 5 `i 543  ]
 [e $U 544  ]
-"222
+"211
 [e :U 543 ]
-[; ;Current_Monitor.c: 222: {
+[; ;Current_Monitor.c: 211: {
 {
-[; ;Current_Monitor.c: 223: _delay((unsigned long)((1000)*(10000000/4000.0)));
-"223
+[; ;Current_Monitor.c: 212: _delay((unsigned long)((1000)*(10000000/4000.0)));
+"212
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
-"224
+"213
 }
-"221
+"210
 [e ++ _x -> 1 `i ]
 [e $ <= _x -> 5 `i 543  ]
 [e :U 544 ]
-"224
+"213
 }
-[; ;Current_Monitor.c: 224: }
-[; ;Current_Monitor.c: 225: }
-"225
+[; ;Current_Monitor.c: 213: }
+[; ;Current_Monitor.c: 214: }
+"214
 [e :UE 542 ]
 }
-"228
+"217
 [v _EEPROM_test `(v ~T0 @X0 1 ef ]
-"229
+"218
 {
-[; ;Current_Monitor.c: 228: void EEPROM_test()
-[; ;Current_Monitor.c: 229: {
+[; ;Current_Monitor.c: 217: void EEPROM_test()
+[; ;Current_Monitor.c: 218: {
 [e :U _EEPROM_test ]
 [f ]
-[; ;Current_Monitor.c: 230: for (int x=0;x<50;x++)
-"230
+[; ;Current_Monitor.c: 219: for (int x=0;x<50;x++)
+"219
 {
 [v _x `i ~T0 @X0 1 a ]
 [e = _x -> 0 `i ]
 [e $ < _x -> 50 `i 547  ]
 [e $U 548  ]
-"231
+"220
 [e :U 547 ]
-[; ;Current_Monitor.c: 231: {
+[; ;Current_Monitor.c: 220: {
 {
-[; ;Current_Monitor.c: 232: Sample[x]=x;
-"232
+[; ;Current_Monitor.c: 221: Sample[x]=x;
+"221
 [e = *U + &U _Sample * -> -> _x `ui `ux -> -> # *U &U _Sample `ui `ux -> _x `uc ]
-"233
+"222
 }
-"230
+"219
 [e ++ _x -> 1 `i ]
 [e $ < _x -> 50 `i 547  ]
 [e :U 548 ]
-"233
+"222
 }
-[; ;Current_Monitor.c: 233: }
-[; ;Current_Monitor.c: 235: }
-"235
+[; ;Current_Monitor.c: 222: }
+[; ;Current_Monitor.c: 224: }
+"224
 [e :UE 546 ]
 }
-"238
+"227
 [v _Average_Function `(v ~T0 @X0 1 ef ]
-"239
+"228
 {
-[; ;Current_Monitor.c: 238: void Average_Function ()
-[; ;Current_Monitor.c: 239: {
+[; ;Current_Monitor.c: 227: void Average_Function ()
+[; ;Current_Monitor.c: 228: {
 [e :U _Average_Function ]
 [f ]
-[; ;Current_Monitor.c: 241: for(int x=1;x<=50;x++)
-"241
+[; ;Current_Monitor.c: 230: for(int x=1;x<=50;x++)
+"230
 {
 [v _x `i ~T0 @X0 1 a ]
 [e = _x -> 1 `i ]
 [e $ <= _x -> 50 `i 551  ]
 [e $U 552  ]
-"242
+"231
 [e :U 551 ]
-[; ;Current_Monitor.c: 242: {
+[; ;Current_Monitor.c: 231: {
 {
-[; ;Current_Monitor.c: 243: Average +=Sample_for_Average[x];
-"243
+[; ;Current_Monitor.c: 232: Average +=Sample_for_Average[x];
+"232
 [e =+ _Average *U + &U _Sample_for_Average * -> -> _x `ui `ux -> -> # *U &U _Sample_for_Average `ui `ux ]
-"245
+"234
 }
-"241
+"230
 [e ++ _x -> 1 `i ]
 [e $ <= _x -> 50 `i 551  ]
 [e :U 552 ]
-"245
+"234
 }
-[; ;Current_Monitor.c: 245: }
-[; ;Current_Monitor.c: 246: Average=Average/50;
-"246
+[; ;Current_Monitor.c: 234: }
+[; ;Current_Monitor.c: 235: Average=Average/50;
+"235
 [e = _Average -> / -> _Average `i -> 50 `i `uc ]
-[; ;Current_Monitor.c: 247: }
-"247
+[; ;Current_Monitor.c: 236: }
+"236
 [e :UE 550 ]
 }
 [p f _sprintf 8388736 ]
-[a 4C 83 97 109 112 108 105 110 103 32 110 117 109 98 101 114 32 37 100 58 32 37 100 32 109 65 32 58 10 0 ]
-[a 5C 65 118 101 114 97 103 101 32 111 102 32 108 97 115 116 32 53 48 32 83 97 109 112 108 101 115 58 32 37 100 32 109 65 32 10 0 ]
+[a 3C 83 97 109 112 108 105 110 103 32 110 117 109 98 101 114 32 37 100 58 32 37 100 32 109 65 32 58 10 0 ]
+[a 4C 65 118 101 114 97 103 101 32 111 102 32 108 97 115 116 32 53 48 32 83 97 109 112 108 101 115 58 32 37 100 32 109 65 32 10 0 ]
 [a 1C 65 99 113 117 105 115 105 116 105 111 110 32 105 110 32 112 114 111 103 114 101 115 115 32 112 108 101 97 115 101 32 119 97 105 116 58 32 10 0 ]
 [a 2C 65 99 113 117 105 115 105 116 105 111 110 32 99 111 109 112 108 101 116 101 100 32 112 114 101 115 115 32 83 32 116 111 32 114 101 97 100 32 111 114 32 82 32 116 111 32 114 101 115 101 116 58 32 10 0 ]
-[a 3C 80 108 101 97 115 101 32 119 97 105 116 46 46 46 46 46 46 32 10 0 ]
